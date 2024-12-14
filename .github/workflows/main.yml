@@ -33,7 +33,7 @@ jobs:
 
       - name: Run simple test
         run: |
-          curl http://127.0.0.1:8080/hello/test > result.txt
+          curl http://127.0.0.1:5000/hello/test > result.txt
           echo "Test result:"
           cat result.txt
 
