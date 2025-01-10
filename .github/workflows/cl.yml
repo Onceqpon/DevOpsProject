@@ -34,6 +34,17 @@ jobs:
           echo "Test result:"
           cat result.txt
 
+      - name: Run tests
+        run: |
+          curl http://127.0.0.1:5000/ > result1.txt
+          curl http://127.0.0.1:5000/hello/test > result2.txt
+          curl http://127.0.0.1:5000/info > result3.txt
+          echo "Test results:"
+          cat result1.txt
+          cat result2.txt
+          cat result3.txt
+
+
       - name: Shut down Flask app
         run: |
           docker ps -q --filter "ancestor=flask-app" | xargs docker stop
